@@ -1,17 +1,29 @@
-variable "story" {
-  default="nothing-received-for-story"
-}
+# variable "story" {
+#   default="nothing-received-for-story"
+# }
 
-variable "sentence" {
-  default="no-sentence"
-}
+# variable "sentence" {
+#   default="no-sentence"
+# }
 
 module "fromsairam" {
-  source = "https://github.com/sbatchu1/tf-exercise"
-  sentence="im batman"
-  story="${module.sai_msg.value} ${var.sentence}"
+  source = "github.com/sbatchu1/tf-exercise"
 }
 
-output "result" {
-  value = var.story
+# variable "mike" {
+#     default = "noting received"
+#     value=module.fromsairam.sai_msg)
+# }
+
+# locals {
+#     mike = module.fromsairam.sai_msg
+# }
+
+
+output "samyak_msg" {
+  value = "${format("im batman, %s!",module.fromsairam.sai_msg)}"
 }
+
+# output "samyak_msg" {
+#   value = "${var.story} ${var.sentence}"
+# }
