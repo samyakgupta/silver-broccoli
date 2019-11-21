@@ -21,7 +21,7 @@ module "fromsairam" {
 
 
 output "samyak_msg" {
-  value = "${format("im batman, %s!",module.fromsairam.sai_msg)}"
+  value = "${format("%s,im batman",module.fromsairam.sai_msg)}"
 }
 
 # output "samyak_msg" {
